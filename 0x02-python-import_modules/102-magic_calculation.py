@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def magic_calculation(a, b):
-    add, sub = __import__('magic_calculation_102', globals(), locals(), ['add', 'sub']).__dict__.values()
+    add, sub = magic_calculation_102.add, magic_calculation_102.sub
     
     if a < b:
         c = add(a, b)
