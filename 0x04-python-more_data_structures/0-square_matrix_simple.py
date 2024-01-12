@@ -1,4 +1,5 @@
-quare_matrix_simple(matrix=[]):
+#!/usr/bin/python3
+square_matrix_simple(matrix=[]):
     new_matrix = matrix.copy()
 
     for i in range(len(matrix)):
