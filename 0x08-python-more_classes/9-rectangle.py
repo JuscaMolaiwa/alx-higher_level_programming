@@ -1,4 +1,7 @@
-ass Rectangle:
+#!/usr/bin/python3
+
+
+class Rectangle:
     """Represent a rectangle."""
     
     number_of_instances = 0
