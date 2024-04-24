@@ -4,34 +4,17 @@ Displays the first occurrence of the state where name matches the argument
 """
 
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    # Get MySQL username, password, database name, and state name from command line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
-
-    # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database)
-
-    # Define the SQL query with user input
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC LIMIT 1"
-
-    # Create a cursor object to execute queries
+    db = MySQLdb.connect(host="localhost",
+                         user=argv[1], passwd=argv[2], db=argv[3])
+    query = "SELECT * FROM states\
+             WHERE states.name LIKE BINARY '{}'\
+             ORDER BY states.id ASC".format(argv[4])
     cursor = db.cursor()
-
-    # Execute the query with the state name provided as input
-    cursor.execute(query, (state_name,))
-
-    # Fetch the first row from the result set
-    row = cursor.fetchone()
-
-    # Display the result
-    if row:
-        print(row)
-
-    # Close cursor and database connection
+    cursor.execute(query)
+    for state in cursor.fetchall():
+        print(state)
     cursor.close()
     db.close()
