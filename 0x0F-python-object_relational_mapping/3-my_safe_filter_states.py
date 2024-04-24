@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Displays all values in the states table where name matches the argument (safe from SQL injection)
+Displays the first value in the states table where name matches the argument (safe from SQL injection)
 """
 
 import MySQLdb
@@ -11,10 +11,12 @@ if __name__ == "__main__":
                          user=argv[1], passwd=argv[2], db=argv[3])
     query = "SELECT * FROM states\
              WHERE states.name = %s\
-             ORDER BY states.id ASC"
+             ORDER BY states.id ASC\
+             LIMIT 1"
     cursor = db.cursor()
     cursor.execute(query, (argv[4], ))
     for state in cursor.fetchall():
         print(state)
     cursor.close()
     db.close()
+
