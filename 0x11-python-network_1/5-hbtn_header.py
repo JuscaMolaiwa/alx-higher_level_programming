@@ -23,3 +23,6 @@ if __name__ == "__main__":
         r = requests.get(url)
         r_id = r.headers['X-Request-Id']
         print(r_id)
+    except KeyError:  # Catch KeyError if header is not found
+        print("X-Request-Id is not found")
+
