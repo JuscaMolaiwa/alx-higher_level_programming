@@ -2,15 +2,11 @@
 """
 Fetches https://alx-intranet.hbtn.io/status using requests and displays the response information.
 """
-
 import requests
 
+
 if __name__ == "__main__":
-    url = 'https://alx-intranet.hbtn.io/status'
-
-    r = requests.get(url)
-    content_type = type(r.text).__name__
-
+    r = requests.get("https://intranet.hbtn.io/status")
     print("Body response:")
-    print("\t- type: {}".format(content_type))
+    print("\t- type: {}".format(type(r.text)))
     print("\t- content: {}".format(r.text))
