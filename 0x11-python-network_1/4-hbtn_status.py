@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Fetches https://alx-intranet.hbtn.io/status using requests and displays the response information.
-"""
+"""Fetches https://intranet.hbtn.io/status."""
 import requests
 
 
