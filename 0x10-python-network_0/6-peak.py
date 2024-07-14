@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 """
-This module provides a function to find a peak element in an unsorted list of integers.
+This module provides a function to find a peak element.
 
 A peak element is an element that is greater than both its neighbors.
 
 The function `find_peak` takes a list of integers and return.
 """
 
+
 def find_peak(list_of_integers):
     """
-    Finds a peak (element greater than both neighbors) in an unsorted list of integers.
+    Finds a peak (element greater than both neighbors).
     Args:
       list_of_integers: A list of integers.
     Returns:
