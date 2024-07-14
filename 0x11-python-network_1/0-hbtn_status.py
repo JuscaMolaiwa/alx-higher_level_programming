@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""fetches https://intranet.hbtn.io/status"""
+"""
+Fetches https://alx-intranet.hbtn.io/status using urllib and displays the response information.
+"""
+
 import urllib.request
 
-
 if __name__ == "__main__":
-    """fetches https://intranet.hbtn.io/status"""
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+    url = 'https://alx-intranet.hbtn.io/status'
+
+    with urllib.request.urlopen(url) as response:
         html = response.read()
         html_str = html.decode('utf-8')
 
