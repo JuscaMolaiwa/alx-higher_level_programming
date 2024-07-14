@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Fetches https://alx-intranet.hbtn.io/status using urllib and displays the response information.
+Fetches https://alx-intranet.hbtn.io/status using urlli
 """
 
 import urllib.request
