@@ -1,25 +1,25 @@
 #!/usr/bin/python3
 """
-Takes in a URL, sends a request to the URL, and displays the
+Takes in a URL, sends a request to the URL and displays the
 value of the X-Request-Id variable found in the header of the
-response using requests.
+response using requests
 """
-
 import requests
 from sys import argv
 
 
 if __name__ == "__main__":
-    """Takes in a URL, sends a request to the URL, and displays
+    """
+    Takes in a URL, sends a request to the URL and displays
     the value of the X-Request-Id variable found in the header
-    of the response using requests."""
-    try:
-        url = argv[1]
-        r = requests.get(url)
-        r.raise_for_status()  # Raise an exception for bad response status
+    of the response using requests
+    """
+    if len(argv) != 2:
+        print("Usage: ./5-hbtn_header.py <URL>")
+        exit(1)
 
-        r_id = r.headers.get('X-Request-Id')
-        if r_id:
-            print(r_id)
-        else:
-            print("No X-Request-Id found in the response headers.")
+    url = argv[1]
+    try:
+        r = requests.get(url)
+        r_id = r.headers['X-Request-Id']
+        print(r_id)
