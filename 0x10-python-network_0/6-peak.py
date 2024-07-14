@@ -9,6 +9,15 @@
   The first peak element found in the list, or None if no peak exists.
 """
 def find_peak(list_of_integers):
+    """
+    Finds a peak (element greater than both neighbors) in an unsorted list of integers.
+
+    Args:
+      list_of_integers: A list of integers.
+
+    Returns:
+      The first peak element found in the list, or None if no peak exists.
+    """
     if not list_of_integers:
         return None
     
