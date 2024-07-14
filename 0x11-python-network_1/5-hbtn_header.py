@@ -23,5 +23,3 @@ if __name__ == "__main__":
             print(r_id)
         else:
             print("No X-Request-Id found in the response headers.")
-    except requests.exceptions.RequestException as e:
-        print("Error occurred:", e)
